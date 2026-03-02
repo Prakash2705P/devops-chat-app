@@ -1,34 +1,74 @@
 body {
-  font-family: Arial;
-  background: #f4f4f4;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  /* Animated Gradient Background */
+  background: linear-gradient(-45deg, #1f1c2c, #928dab, #00c6ff, #0072ff);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+}
+
+/* Background Animation */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .chat-container {
-  width: 400px;
-  margin: 50px auto;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
+  width: 420px;
+  padding: 25px;
+  border-radius: 20px;
+
+  /* Glassmorphism effect */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+  color: white;
+}
+
+.chat-container h2 {
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 #messages {
   height: 300px;
-  overflow-y: scroll;
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
+  overflow-y: auto;
+  border-radius: 10px;
   padding: 10px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 input {
   width: 100%;
-  padding: 8px;
-  margin: 5px 0;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
 }
 
 button {
   width: 100%;
-  padding: 10px;
-  background: green;
-  color: white;
+  padding: 12px;
+  border-radius: 10px;
   border: none;
+  font-weight: bold;
+  cursor: pointer;
+  background: #00c853;
+  color: white;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #00e676;
+  transform: scale(1.03);
 }
